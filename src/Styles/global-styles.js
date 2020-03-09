@@ -74,7 +74,7 @@ body {
     // border: 5px solid red;
     flex-direction: row;
     overflow: hidden;
-    width:100%;
+    width:100vw;
     align-items: center;
     z-index:3;
     position: fixed;

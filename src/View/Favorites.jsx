@@ -5,13 +5,25 @@ const Favorites = () => {
 	const [ user_removed, update_user_removed ] = useState(false);
 	return (
 		<StyledFavorites>
-			{Object.keys(localStorage).map((id) => {
-				return (
-					<StyledFavorite>
-						<Favorite id={id} update_user_removed={update_user_removed} user_removed={user_removed} />
-					</StyledFavorite>
-				);
-			})}
+			{Object.keys(localStorage).length > 0 ? (
+				<div>
+					{Object.keys(localStorage).map((id) => {
+						return (
+							<StyledFavorite>
+								<Favorite
+									id={id}
+									update_user_removed={update_user_removed}
+									user_removed={user_removed}
+								/>
+							</StyledFavorite>
+						);
+					})}
+				</div>
+			) : (
+				<div>
+					<h1>There are no favorites yet :(</h1>
+				</div>
+			)}
 		</StyledFavorites>
 	);
 };
@@ -20,18 +32,15 @@ export default Favorites;
 const StyledFavorites = styled.div`
 	display: flex;
 	margin: auto auto;
-	max-width: 100vw;
-	s: wrap;
-	margin-top: 10rem;
+	width: 100vw;
+	flexs: wrap;
 	// border: 5px solid red;
-	// width: 70vw;
+	margin-top: 20rem;
 	height: 100vh;
-	// border: 2px solid blue;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	flex-wrap: wrap;
 	text-align: center;
-	// flex-direction: column;
 `;
 
 const StyledFavorite = styled.div`
