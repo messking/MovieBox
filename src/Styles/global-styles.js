@@ -66,6 +66,7 @@ body {
     text-align: center;
     
   }
+  :focus {outline:none;}
 
   .Header {
     background-color: #282c34;
