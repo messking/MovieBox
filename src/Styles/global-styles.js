@@ -153,7 +153,7 @@ a:link {
 
   @media (max-width: 875px) {
     #root::-webkit-scrollbar {
-      // display: none;
+      display: none;
     }
 
     #root {
@@ -194,11 +194,11 @@ a:link {
 
 
   }
-
-  input:focus::-webkit-input-placeholder { color:transparent; }
-input:focus:-moz-placeholder { color:transparent; } /* Firefox 18- */
-input:focus::-moz-placeholder { color:transparent; } /* Firefox 19+ */
-input:focus:-ms-input-placeholder { color:transparent; } /* oldIE ;) */
+      input { -webkit-user-select:text;}
+      input:focus::-webkit-input-placeholder { color:transparent; }
+      input:focus:-moz-placeholder { color:transparent; } /* Firefox 18- */
+      input:focus::-moz-placeholder { color:transparent; } /* Firefox 19+ */
+      input:focus:-ms-input-placeholder { color:transparent; } /* oldIE ;) */
 
 
   `;
