@@ -14,6 +14,7 @@ user-select: none;
 html {
   height: 100vh;
   // width: 50vw;
+  scroll-behavior: smooth;
   font-size: 8px;
   // overflow-x:hidden;
   line-height: 1.15;

@@ -5,7 +5,7 @@ import { MyContext } from '../Store/MovieStore';
 function MovieCard({ MovieInfo }) {
 	const state = useContext(MyContext);
 	const { set_chosen_movie_hero } = state.actions;
-	const { poster_path } = MovieInfo;
+	const { poster_path, title } = MovieInfo;
 	return (
 		<StyledMovieCard
 			onClick={() => {
@@ -14,7 +14,10 @@ function MovieCard({ MovieInfo }) {
 				window.scroll();
 			}}
 			poster_path={poster_path}
-		/>
+			title={title}
+		>
+			<div className="title">{title}</div>
+		</StyledMovieCard>
 	);
 }
 
@@ -41,14 +44,27 @@ const StyledMovieCard = styled.div`
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	cursor:pointer;
-	&:hover{
-		border:1px solid navy;
-		transform: scale(1.05);
-	
+	transition: filter .5s ease-in-out;
+	-webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+	filter: grayscale(0%); /* FF 35+ */
+	.title{
+		 background-color:rgba(0,0,0,0.4);
+		visibility: hidden;
+		width:100%;
 	}
-animation: ${fadeIn} 2s;
-	transition: all .5s ease;
+	&:hover{
+		.title{
+			visibility: visible;
+			animation: ${fadeIn} .4s ease;
+		}
+		transform: scale(1.05);	
+		-webkit-filter: grayscale(60%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+		filter: grayscale(60%); /* FF 35+ */
+		transition: all 0.5s ease;
 
+		display: inline-block;
+		color: white;
+	}
 	@media (max-width: 375px) {
 		// margin-left: 2rem;
 	}

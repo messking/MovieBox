@@ -11,7 +11,6 @@ import { withRouter, useParams } from 'react-router-dom';
 function ChosenMovie({ history }) {
 	const url_id = useParams();
 	const { id } = url_id;
-	// console.log('params are', useParams());
 	const [ view_cast, update_view_cast ] = useState('CAST');
 
 	return (
