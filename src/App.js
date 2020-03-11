@@ -4,6 +4,7 @@ import HomePage from './HomePage';
 import ChosenMovie from './View/ChosenMovie';
 import NavBar from './View/NavBar';
 import Favorites from './View/Favorites';
+import Footer from './View/Footer';
 
 const App = () => {
 	// window.scrollTo(0, 0);
@@ -17,6 +18,7 @@ const App = () => {
 					<Route path="/:id" render={() => <ChosenMovie />} />
 				</Switch>
 				<Switch />
+				<Footer />
 			</Router>
 		</div>
 	);
