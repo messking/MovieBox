@@ -76,6 +76,7 @@ const StyledMoviesField = styled.div`
 	align-items: center;
 	justify-content: center;
 	text-size-adjust: 100%;
+	overflow-x: hidden;
 	margin: auto auto;
 `;
 

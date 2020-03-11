@@ -32,6 +32,7 @@ function ChosenMovieInfo({ url_id, history }) {
 		() => {
 			getMovieInfoByID(url_id);
 			getMovieVideosById(url_id);
+			window.scrollTo(0, 0);
 		},
 		// eslint-disable-next-line
 		[ url_id ]

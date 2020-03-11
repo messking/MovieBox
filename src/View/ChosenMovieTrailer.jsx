@@ -74,9 +74,6 @@ const StyledTrailerWrapper = styled.div`
 	flex-basis: 20%;
 	justify-content: center;
 	align-items: center;
-	position: relative;
-	top: 9rem;
-	right: 60rem;
 	// border-radius: 50%;
 	font-size: 1rem;
 	font-family: 'Noto Sans JP';
@@ -85,7 +82,7 @@ const StyledTrailerWrapper = styled.div`
 	animation: ${fadeIn} 2s;
 	// border: 5px solid red;
 	position: relative;
-	top: 11.5rem;
+	top: 7.5rem;
 	right: 55rem;
 	transition: all .5s ease;
 	@media (max-width: 875px) {

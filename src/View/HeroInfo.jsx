@@ -21,6 +21,7 @@ function HeroInfo() {
 					onClick={() => {
 						set_chosen_movie_info(id);
 						set_popular_movie_list([]);
+						window.scrollTo(0, 0);
 					}}
 				>
 					<i class="fas fa-info fa-2x" />
@@ -79,18 +80,39 @@ const StyledHeroInfoInformation = styled.div`
  
 	}
 	@media (max-width: 815px) {
-		left: calc(50% - 15rem);
-		top: 37rem;
+		left: calc(50% - 37rem);
+		top: 50rem;
 		width: 40vw;
 		position: relative;
 	}    
 
+	@media (max-width: 768px) {
+		left: calc(75% - 50vw);
+		top: 50rem;
+		width: 50vw;
+		position: relative;
+	}   
+
+	@media (max-width: 425px) {
+		left: calc(50% - 18rem);
+		top: 50rem;
+		width: 60vw;
+		position: relative;
+	}   
+
 	@media (max-width: 375px) {
-	left: 10.5rem;
+	left: 4.5rem;
 		top: 50rem;
 		width: 35rem;
 		// height: 30rem;
 		}
+
+		@media (max-width: 320px) {
+			left: 8.5rem;
+				top: 32rem;
+				width: 20rem;
+				// height: 30rem;
+				}
 
 `;
 

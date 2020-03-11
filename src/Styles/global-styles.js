@@ -13,16 +13,14 @@ user-select: none;
 
 html {
   height: 100vh;
-  // width: 50vw;
   scroll-behavior: smooth;
   font-size: 8px;
-  // overflow-x:hidden;
   line-height: 1.15;
     text-size-adjust: 100%;
-    // border: 5px solid red;
     display:flex;
     justify-content: center;
 }
+
 
 p {
   display: block;
@@ -33,34 +31,26 @@ p {
 }
 
 #root{
-  // border: 5px solid blue;
   min-height:100vh;
   min-width:100vw;
   display: flex;
   justify-content: center;
-  // align-items: center;
 }
 
 body {
   padding: 0;
   margin: 0;
-  // width: 100%;
-  height: 100vh;
   font-size: 25px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100px;
-  // border: 10px solid pink;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     font-family: 'Noto Sans JP';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // margin:0 auto;
-  // flex-grow: 1;
-
 }
 .App {
     text-align: center;
@@ -106,17 +96,18 @@ body {
     z-index:3;
     color: white;
     box-shadow: 0 4px 2px -2px gray;
+    overflow-x: hidden;
     position: sticky;
     top: 0;
   }
   .HeroContainer{
       height:700px;
       display: flex;
-      max-width: 100vw;
+      max-width: 100%;
       justify-content: center;
       align-items: center;
       position:relative;
-
+      overflow-x: hidden;
 
   }
 
@@ -147,10 +138,9 @@ a:link {
   margin-top: 5px;
 }
 
-  .slider.closed {
-    max-height: 0;
-  }
-
+::-webkit-scrollbar {
+    display: none;
+}
   @media (max-width: 875px) {
     #root::-webkit-scrollbar {
       display: none;

@@ -21,7 +21,7 @@ const Favorites = () => {
 				</div>
 			) : (
 				<div>
-					<h1>There are no favorites yet :(</h1>
+					<h3>There are no favorites yet :(</h3>
 				</div>
 			)}
 		</StyledFavorites>

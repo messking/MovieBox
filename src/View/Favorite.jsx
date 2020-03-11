@@ -14,6 +14,7 @@ function Favorite({ id, update_user_removed, user_removed }) {
 				<Btn
 					onClick={() => {
 						console.log('Redirecting to information page!');
+						window.scrollTo(0, 0);
 					}}
 				>
 					<i class="fas fa-info fa-2x" />

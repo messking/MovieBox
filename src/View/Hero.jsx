@@ -11,6 +11,9 @@ function Hero({ children }) {
 	useEffect(() => {
 		if (chosen_movie_hero) set_chosen_movie_hero(chosen_movie_hero);
 		// eslint-disable-next-line
+		setTimeout(() => {
+			console.clear();
+		}, 200);
 	}, []);
 	return (
 		<div className="HeroContainer">
@@ -32,6 +35,7 @@ const fadeIn = keyframes`
 
 const StyledHero = styled.div`
 	z-index: 1;
+	overflow-x: hidden;
 	width: 100vw;
 	min-height: 700px;
 	padding: 0;
@@ -51,6 +55,6 @@ const StyledHero = styled.div`
 		overflow-y: visible;
 		background-image: url("https://image.tmdb.org/t/p/original/${({ backdrop_path }) => backdrop_path}");
 	background-size: cover;
-		min-width: 130vw;
+		// min-width: 130vw;
 		
 		`;

@@ -11,7 +11,6 @@ function MovieCard({ MovieInfo }) {
 			onClick={() => {
 				set_chosen_movie_hero(MovieInfo);
 				window.scrollTo(0, 0);
-				window.scroll();
 			}}
 			poster_path={poster_path}
 			title={title}
