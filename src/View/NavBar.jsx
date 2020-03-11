@@ -16,6 +16,7 @@ function NavBar() {
 					<Link
 						onClick={() => {
 							if (params.id) set_popular_movie_list([]);
+							window.scrollTo(0, 0);
 						}}
 						to="/"
 					>
@@ -29,6 +30,7 @@ function NavBar() {
 				<StyledWishList
 					onClick={() => {
 						set_wish_list_opened(!wish_list_opened);
+						window.scrollTo(0, 0);
 					}}
 				>
 					<Link to="/favorites">

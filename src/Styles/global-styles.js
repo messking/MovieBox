@@ -110,14 +110,6 @@ body {
       overflow-x: hidden;
 
   }
-
-  .slider {
-    overflow-y: hidden;
-    max-height: 500px; /* approximate max height */
-    transition-property: all;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  }
   h5{
     font-weight: 100;
     color: white;
@@ -148,8 +140,8 @@ a:link {
 
     #root {
       width: 100vw;
-      overflow-x: hidden;
-      overflow-y: visible;
+      // overflow-x: hidden;
+      // overflow-y: visible;
     }
 
     .Header {
@@ -170,8 +162,8 @@ a:link {
     }
     
     html{
-      overflow-x: hidden;
-      overflow-y: hidden;
+      // overflow-x: hidden;
+      // overflow-y: hidden;
     }
     .Searchbox{
       // border: 4px solid blue;

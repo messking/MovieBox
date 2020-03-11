@@ -6,7 +6,7 @@ const Favorites = () => {
 	return (
 		<StyledFavorites>
 			{Object.keys(localStorage).length > 0 ? (
-				<div>
+				<StyledFavoritesFlex>
 					{Object.keys(localStorage).map((id) => {
 						return (
 							<StyledFavorite>
@@ -18,11 +18,11 @@ const Favorites = () => {
 							</StyledFavorite>
 						);
 					})}
-				</div>
+				</StyledFavoritesFlex>
 			) : (
-				<div>
+				<StyledFavorites>
 					<h3>There are no favorites yet :(</h3>
-				</div>
+				</StyledFavorites>
 			)}
 		</StyledFavorites>
 	);
@@ -31,16 +31,15 @@ export default Favorites;
 
 const StyledFavorites = styled.div`
 	display: flex;
-	margin: auto auto;
 	width: 100vw;
 	flexs: wrap;
-	// border: 5px solid red;
-	margin-top: 20rem;
-	height: 100vh;
+	margin-top: 8rem;
 	justify-content: center;
 	align-items: flex-start;
 	flex-wrap: wrap;
 	text-align: center;
+	overflow-hidden;
+
 `;
 
 const StyledFavorite = styled.div`
@@ -55,4 +54,17 @@ const StyledFavorite = styled.div`
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+`;
+
+const StyledFavoritesFlex = styled.div`
+	display: flex;
+	width: 70vw;
+	flexs: wrap;
+	margin-top: 8rem;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	text-align: center;
+	overflow-hidden;
+
 `;

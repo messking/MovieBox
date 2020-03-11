@@ -261,6 +261,6 @@ const ButtonsWrapper = styled.div`
 	border-radius: 5px;
 	@media (max-width: 875px) {
 		top: 6rem;
-		left: -5rem;
+		left: -3rem;
 	}
 `;

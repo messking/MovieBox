@@ -41,4 +41,9 @@ const StyledImageCard = styled.div`
 	}
 animation: ${fadeIn} 2s;
 	transition: all .5s ease;
+	
+	@media (max-width: 815px) {
+	width: 20rem;
+	height: 30rem;
+	}
 `;

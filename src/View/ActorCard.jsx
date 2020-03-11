@@ -66,6 +66,7 @@ const StyledActorWarpper = styled.div`
 	display: flex;
 	flex-shrink: 4;
 	max-width: 100%;
+	min-height: 30rem;
 	flex-basis: 20%;
 	justify-content: center;
 	align-items: center;
@@ -74,6 +75,8 @@ const StyledActorWarpper = styled.div`
 	font-family: 'Noto Sans JP';
 	flex-direction: column;
 	flex-wrap: wrap;
+	margin: 10px;
+	// border: 5px solid blue;
 `;
 
 const PhotoUnavilable = styled.div`

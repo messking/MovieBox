@@ -9,8 +9,8 @@ function Hero({ children }) {
 	const { set_chosen_movie_hero } = state.actions;
 	const { backdrop_path } = chosen_movie_hero;
 	useEffect(() => {
-		if (chosen_movie_hero) set_chosen_movie_hero(chosen_movie_hero);
 		// eslint-disable-next-line
+		if (chosen_movie_hero) set_chosen_movie_hero(chosen_movie_hero);
 		setTimeout(() => {
 			console.clear();
 		}, 200);

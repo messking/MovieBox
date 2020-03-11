@@ -63,9 +63,12 @@ const StyledImagesField = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	user-select: none;
-	// align-items: center;
+	align-items: center;
 	justify-content: center;
 	// border: 1px solid green;
 	margin-top: 3rem;
 	text-size-adjust: 100%;
+	@media (max-width: 815px) {
+		height: 50vh;
+	}
 `;
