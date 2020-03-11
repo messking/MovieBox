@@ -10,7 +10,7 @@ moment().format();
 function ChosenMovieInfo({ url_id, history }) {
 	const state = useContext(MyContext);
 	const { chosen_movie_hero } = state.data;
-	const { set_chosen_movie_hero } = state.actions;
+	const { set_chosen_movie_hero, set_is_loading } = state.actions;
 	let {
 		title,
 		overview,
@@ -33,6 +33,7 @@ function ChosenMovieInfo({ url_id, history }) {
 			getMovieInfoByID(url_id);
 			getMovieVideosById(url_id);
 			window.scrollTo(0, 0);
+			set_is_loading(false);
 		},
 		// eslint-disable-next-line
 		[ url_id ]

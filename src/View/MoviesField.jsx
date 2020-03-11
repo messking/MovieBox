@@ -2,19 +2,19 @@ import React, { useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import MovieCard from './MovieCard';
 import { MyContext } from '../Store/MovieStore';
-let currentPageCounter = 1;
 function MoviesField() {
 	const state = useContext(MyContext);
-	const { popular_movie_list, load_more } = state.data;
-	const { set_popular_movie_list, set_chosen_movie_hero } = state.actions;
+	const { popular_movie_list, load_more, current_page } = state.data;
+	const { set_popular_movie_list, set_chosen_movie_hero, set_current_page, set_is_loading } = state.actions;
 	useEffect(() => {
-		getPopulerMovies();
+		getPopulerMovies(1);
 		setInitialHeroToBeAvengers();
-		// setInitialRandomHero();
+		set_current_page(2);
+		set_is_loading(false);
 		// eslint-disable-next-line
 	}, []);
 
-	async function getPopulerMovies(page = 1) {
+	async function getPopulerMovies(page) {
 		let movieList = await fetch(
 			`https://api.themoviedb.org/3/movie/popular?api_key=d083014d3268dafcc42a2cd4008bb7d6&language=en-US&page=${page}`
 		);
@@ -43,8 +43,8 @@ function MoviesField() {
 	}
 
 	async function LoadMoreMovies(e) {
-		currentPageCounter++;
-		getPopulerMovies(currentPageCounter);
+		set_current_page(current_page + 1);
+		getPopulerMovies(current_page);
 	}
 
 	return (
@@ -55,7 +55,9 @@ function MoviesField() {
 
 			{load_more === true ? (
 				<LoadMoreBtn>
-					<Btn onClick={LoadMoreMovies}>LOAD MORE</Btn>
+					<Btn onClick={LoadMoreMovies}>
+						<p>LOAD MORE</p>
+					</Btn>
 				</LoadMoreBtn>
 			) : null}
 		</StyledMoviesField>
@@ -85,30 +87,31 @@ const LoadMoreBtn = styled.div`
 	flex-basis: 100%;
 	justify-content: center;
 	align-items: center;
+	// border: 5px solid red;
 	margin: 40px;
-
-	// @media (max-width: 375px) {
-	// margin-left: 15rem;
-	// }
 `;
 
 const Btn = styled.button`
-	width: 150px;
+	width: 30rem;
 	height: 40px;
-	border: none;
+	border-radius: 90px / 90px;
 	color: white;
 	font-size: 20px;
 	cursor: pointer;
 	background: #282c34;
-	padding: 10px;
-	border-radius: 5px;
-	display:flex;
+	padding: 3rem;
+	display: flex;
 	justify-content: center;
 	align-items: center;
+	border: none;
+
+	p {
+		position: relative;
+		top: -3.5rem;
+	}
 	&:hover {
-		box-shadow 2px 2px 6px 3px #ccc;
-		background: navy;
+		// box-shadow 2px 2px 6px 3px #ccc;
+		opacity: 0.8;
 		// transform: scale(1.01);
 	}
-	transition: all .9s;
 `;

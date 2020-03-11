@@ -9,7 +9,8 @@ function HeroInfo() {
 		update_wishlist_movies,
 		set_chosen_movie_info,
 		set_current_wishlist_movies,
-		set_popular_movie_list
+		set_popular_movie_list,
+		set_is_loading
 	} = state.actions;
 	const { title, overview, id } = chosen_movie_hero;
 	return (
@@ -21,6 +22,7 @@ function HeroInfo() {
 					onClick={() => {
 						set_chosen_movie_info(id);
 						set_popular_movie_list([]);
+						set_is_loading(true);
 						window.scrollTo(0, 0);
 					}}
 				>

@@ -9,11 +9,11 @@ function Hero({ children }) {
 	const { set_chosen_movie_hero } = state.actions;
 	const { backdrop_path } = chosen_movie_hero;
 	useEffect(() => {
-		// eslint-disable-next-line
 		if (chosen_movie_hero) set_chosen_movie_hero(chosen_movie_hero);
 		setTimeout(() => {
 			console.clear();
 		}, 200);
+		// eslint-disable-next-line
 	}, []);
 	return (
 		<div className="HeroContainer">
